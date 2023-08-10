@@ -1,9 +1,11 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
+import ToastContext from "../context/ToastContext";
 
 const Login = () => {
-
+    
+    const { toast } = useContext(ToastContext);
     const { loginUser } = useContext(AuthContext);
 
     const [credentials, setCredentials] = useState({
@@ -14,7 +16,6 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         loginUser(credentials);
-        
         setCredentials({email: "", password: ""});
     };
 

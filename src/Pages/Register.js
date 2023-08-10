@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import AuthContext from '../context/AuthContext';
+import ToastContext from '../context/ToastContext';
 
 const Register = () => {
 
+    const { toast } = useContext(ToastContext);
     const { registerUser } = useContext(AuthContext);
 
     const [credentials, setCredentials] = useState({
@@ -20,20 +20,17 @@ const Register = () => {
         e.preventDefault();
         
         if (credentials.password !== credentials.confirmPassword){
-            toast.error("Password doesn't match!", {autoClose: 2000});
+            toast.error("Password doesn't match!");
             setCredentials({...credentials, password: "", confirmPassword: ""});
-        } else{
-            const userData = {...credentials, confirmPassword: undefined};
-            registerUser(userData);
-            toast.success("Registered", {autoClose: 2000});
-            setCredentials({name: "", email: "", password: "", confirmPassword: ""});
         }
+        const userData = {...credentials, confirmPassword: undefined};
+        registerUser(userData);
+        setCredentials({name: "", email: "", password: "", confirmPassword: ""});
         
     };
 
     return (
         <>
-            <ToastContainer />
             <h3>Create an account</h3>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
