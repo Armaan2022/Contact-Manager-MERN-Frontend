@@ -7,7 +7,7 @@ const ToastContext = createContext();
 export const ToastContextProvider = ({ children }) => {
     return (
         <ToastContext.Provider value={{ toast }}>
-            <ToastContainer autoClose={1200} />
+            <ToastContainer autoClose={1000} />
             {children}
         </ToastContext.Provider>
     );

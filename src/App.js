@@ -6,6 +6,9 @@ import Layout from './components/Layout';
 import { Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './context/AuthContext';
 import { ToastContextProvider } from './context/ToastContext';
+import CreateContact from './Pages/CreateContact';
+import MyContacts from './Pages/MyContacts';
+import EditContact from './Pages/EditContact';
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/create' element={<CreateContact />} />
+            <Route path='/mycontacts' element={<MyContacts />} />
+            <Route path='/edit/:id' element={<EditContact />} />
           </Routes>
         </Layout>
       </AuthContextProvider>

@@ -17,7 +17,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <nav className="navbar sticky-top navbar-expand-lg bg-primary" data-bs-theme="dark">
             <div className="container-fluid">
                 <Link to="/" style={{textDecoration: 'none'}}>
                     <a className="navbar-brand">Contact Manager</a>
@@ -30,7 +30,17 @@ const Navbar = () => {
                         {user ? 
                             <>
                                 <li className="nav-item">
-                                    <button type='button' className='btn btn-danger' onClick={logout}>Logout</button>
+                                    <Link to="/mycontacts" style={{textDecoration: 'none'}}>
+                                        <a className="nav-link">Contacts</a>
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link to="/create" style={{textDecoration: 'none'}}>
+                                        <a className="nav-link">Create</a>
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <button type='button' className='btn btn-danger rounded-pill' onClick={logout}>Logout</button>
                                 </li>
                             </> : 
                             <>
