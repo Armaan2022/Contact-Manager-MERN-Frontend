@@ -1,4 +1,15 @@
-BACKEND CODE : [HERE](https://github.com/Armaan2022/contact-manager-backend)
+# Contact Manager Front-end
+This is the frontend part of the Contact Manager application. It allows users to sign in, add, edit, and view their contact details. This project is built using React.
+
+## Features:
+- User authentication (Sign In)
+- Add new contacts
+- Edit existing contacts
+- View a list of contacts
+- Responsive design
+
+## BACKEND
+Repo : [HERE](https://github.com/Armaan2022/contact-manager-backend)
 
 
 # Getting Started with Create React App
